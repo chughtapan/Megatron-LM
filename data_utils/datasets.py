@@ -458,7 +458,7 @@ class GPT2Dataset(data.Dataset):
     def __init__(self, ds,
                  max_seq_len=1024,
                  num_samples=None,
-                 weighted=True,
+                 weighted=False,
                  sample_across_doc=True,
                  random_across_doc_sampling=True,
                  bias_for_single_doc=False,
@@ -581,7 +581,7 @@ class bert_sentencepair_dataset(data.Dataset):
         dataset_size (int): number of random sentencepairs in the dataset. Default: len(ds)*(len(ds)-1)
 
     """
-    def __init__(self, ds, max_seq_len=512, mask_lm_prob=.15, max_preds_per_seq=None, short_seq_prob=.01, dataset_size=None, presplit_sentences=False, weighted=True, **kwargs):
+    def __init__(self, ds, max_seq_len=512, mask_lm_prob=.15, max_preds_per_seq=None, short_seq_prob=.01, dataset_size=None, presplit_sentences=False, weighted=False, **kwargs):
         self.ds = ds
         self.ds_len = len(self.ds)
         self.tokenizer = self.ds.GetTokenizer()

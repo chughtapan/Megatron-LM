@@ -383,7 +383,7 @@ def train(model, optimizer, lr_scheduler,
             total_lm_loss = 0.0
             if report_memory_flag:
                 report_memory('after {} iterations'.format(iteration))
-                report_memory_flag = False
+                # report_memory_flag = False
             timers.log(timers_to_log, normalizer=args.log_interval)
 
         # Autoresume
